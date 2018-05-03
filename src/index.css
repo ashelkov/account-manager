@@ -1,5 +1,18 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.thin {
+  font-weight: 300;
 }
