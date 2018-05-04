@@ -12,14 +12,15 @@ const NavigationHeader = () => (
     <div className={cn('inner-content')}>
       <div className={cn('brand')}>
         <div className={cn('title')}>
-          Account
-          <span className="semibold">Manager</span>
+          <Link to="/">
+            Account
+            <span className="semibold">Manager</span>
+          </Link>
         </div>
       </div>
       <div className={cn('nav-links')}>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/topics">Topics</Link>
+        <Link to="/">Users</Link>
+        <Link to="/create-user">Create</Link>
       </div>
     </div>
   </header>
