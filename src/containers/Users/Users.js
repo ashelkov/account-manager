@@ -1,14 +1,13 @@
 import React from 'react';
+// components
+import UsersListRow from './components/UsersListRow';
+// data
+import users from './users.json';
 
 const Users = () => (
   <div>
-    <h1>Users List</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque
-      dicta ipsam officia recusandae, sunt totam veritatis. Alias culpa
-      doloribus earum itaque nam natus nisi numquam, perspiciatis quis saepe
-      sit.
-    </p>
+    <h2>Users List</h2>
+    {users.map((user, index) => <UsersListRow user={user} key={index} />)}
   </div>
 );
 

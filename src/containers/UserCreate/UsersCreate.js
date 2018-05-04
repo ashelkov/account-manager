@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserCreate = () => (
   <div>
-    <h1>User Create</h1>
+    <h2>User Create</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
       aspernatur corporis officia quibusdam quod voluptate voluptatem,

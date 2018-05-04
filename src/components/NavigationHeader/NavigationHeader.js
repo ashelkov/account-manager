@@ -9,7 +9,7 @@ const cn = classnames.bind(styles);
 
 const NavigationHeader = () => (
   <header className={cn('header')}>
-    <div className={cn('inner-content')}>
+    <div className={cn('inner-content', 'container')}>
       <div className={cn('brand')}>
         <div className={cn('title')}>
           <Link to="/">
