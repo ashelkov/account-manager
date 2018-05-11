@@ -14,7 +14,7 @@
 }
 
 .row-container:hover {
-  background-color: #efefef;
+  background-color: rgba(255, 127, 80, 0.1);
   cursor: pointer;
 }
 

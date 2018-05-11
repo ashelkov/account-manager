@@ -1,0 +1,40 @@
+.button {
+  display: inline;
+  min-height: 38px;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  border: none;
+  min-width: 100px;
+  transition: all 0.2s ease;
+  background-color: #666;
+  color: white;
+}
+
+.primary {
+  background-color: coral;
+  color: white;
+}
+
+.secondary {
+  background-color: mediumpurple;
+  color: white;
+}
+
+.hollow {
+  background-color: #fafafa;
+  border: 2px solid #333;
+  color: #333;
+  font-weight: 600;
+}
+
+.primary.hollow {
+  border-color: coral;
+  color: coral;
+}
+
+.secondary.hollow {
+  border-color: mediumpurple;
+  color: mediumpurple;
+}
