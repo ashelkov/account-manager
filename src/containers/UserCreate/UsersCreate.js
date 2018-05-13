@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // components
 import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import UserAccountTab from './components/UserAccountTab';
+import UserProfileTab from './components/UserProfileTab';
 // styles
 import classnames from 'classnames/bind';
 import styles from './UsersCreate.mod.css';
@@ -27,10 +28,7 @@ class UserCreate extends Component {
         <div className={cn('tab-content')}>
           <Switch>
             <Route path="/create-user/account" component={UserAccountTab} />
-            <Route
-              path="/create-user/profile"
-              render={() => <DummyTab title="Profile Tab" />}
-            />
+            <Route path="/create-user/profile" component={UserProfileTab} />
             <Route
               path="/create-user/contacts"
               render={() => <DummyTab title="Contacts Tab" />}

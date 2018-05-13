@@ -30,9 +30,9 @@ input[type='text'],
 input[type='password'],
 input[type='email'] {
   width: 100%;
-  max-width: 400px;
   font-size: 14px;
-  height: 34px;
+  height: 38px;
+  box-sizing: border-box;
   padding: 0 5px;
 }
 

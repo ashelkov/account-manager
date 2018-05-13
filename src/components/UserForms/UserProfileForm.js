@@ -2,16 +2,22 @@ import React from 'react';
 // components
 import { Field, reduxForm } from 'redux-form';
 import Input from '../Input/Input';
-import PasswordInput from '../PasswordInput/PasswordInput';
 import Button from '../Button/Button';
 import Spinner from '../Spinner/Spinner';
 // styles
 import classnames from 'classnames/bind';
-import styles from './UserAccountForm.mod.css';
+import styles from './UserProfileForm.mod.css';
+import PasswordInput from '../PasswordInput/PasswordInput';
 
 const cn = classnames.bind(styles);
 
-const UserAccountForm = ({ handleSubmit, pristine, reset, submitting }) => {
+const UserProfileForm = ({
+  handleSubmit,
+  errors,
+  pristine,
+  reset,
+  submitting
+}) => {
   return (
     <form onSubmit={handleSubmit} className={cn('form')}>
       <div className="row">
@@ -72,5 +78,5 @@ const UserAccountForm = ({ handleSubmit, pristine, reset, submitting }) => {
 };
 
 export default reduxForm({
-  form: 'user-account-form'
-})(UserAccountForm);
+  form: 'user-profile-form'
+})(UserProfileForm);
