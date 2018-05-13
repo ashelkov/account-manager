@@ -1,7 +1,9 @@
 import React from 'react';
 // components
 import { Field, reduxForm } from 'redux-form';
+import Input from '../Input/Input';
 import Button from '../Button/Button';
+import Spinner from '../Spinner/Spinner';
 // styles
 import classnames from 'classnames/bind';
 import styles from './UserAccountForm.mod.css';
@@ -32,7 +34,7 @@ const UserAccountForm = ({
             <label>Username</label>
             <Field
               name="username"
-              component="input"
+              component={Input}
               type="text"
               placeholder="Username"
             />
@@ -42,7 +44,7 @@ const UserAccountForm = ({
             <label>Password</label>
             <Field
               name="password"
-              component="input"
+              component={Input}
               type="password"
               placeholder="Password"
             />
@@ -51,7 +53,7 @@ const UserAccountForm = ({
             <label>Repeat Password</label>
             <Field
               name="passwordRepeat"
-              component="input"
+              component={Input}
               type="password"
               placeholder="Password"
             />
@@ -64,7 +66,11 @@ const UserAccountForm = ({
           Reset
         </Button>
         <Button primary type="submit" disabled={pristine || submitting}>
-          Submit
+          {submitting ? (
+            <Spinner color="white" scale={0.6} />
+          ) : (
+            <span>Submit</span>
+          )}
         </Button>
       </div>
     </form>

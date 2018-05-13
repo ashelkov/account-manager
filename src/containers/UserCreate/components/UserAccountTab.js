@@ -10,7 +10,9 @@ function submit(values) {
 
   return sleep(1000).then(() => {
     throw new SubmissionError({
-      username: 'User does not exist'
+      username: 'user does not exist',
+      password: 'is required',
+      passwordRepeat: 'passwords not match'
     });
   });
 }

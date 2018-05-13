@@ -1,0 +1,14 @@
+.form-input {
+}
+
+.has-error input {
+  border: 2px solid red;
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+.field-error {
+  font-size: 12px;
+  font-weight: 600;
+  color: red;
+  margin: 3px 0;
+}
