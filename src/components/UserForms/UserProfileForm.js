@@ -1,13 +1,13 @@
 import React from 'react';
 // components
-import { Field, reduxForm } from 'redux-form';
-import Input from '../Input/Input';
+import { reduxForm } from 'redux-form';
+import FormField from '../FormField/FormField';
+import TextInput from '../TextInput/TextInput';
+import Datepicker from '../Datepicker/Datepicker';
 import Button from '../Button/Button';
-import Spinner from '../Spinner/Spinner';
 // styles
 import classnames from 'classnames/bind';
 import styles from './UserProfileForm.mod.css';
-import PasswordInput from '../PasswordInput/PasswordInput';
 
 const cn = classnames.bind(styles);
 
@@ -22,55 +22,61 @@ const UserProfileForm = ({
     <form onSubmit={handleSubmit} className={cn('form')}>
       <div className="row">
         <div className="col-sm-6 col-xs-12">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum,
-            expedita officia. Doloremque ea, esse, eum, expedita facere illo
-            laudantium libero magnam minima numquam officiis soluta veritatis.
-            Alias delectus perspiciatis quos.
-          </p>
+          <FormField
+            name="firstName"
+            component={TextInput}
+            type="text"
+            placeholder="First name"
+            label="First Name"
+            isRequired
+          />
+          <FormField
+            name="lastName"
+            component={TextInput}
+            type="text"
+            placeholder="Last name"
+            label="Last Name"
+            isRequired
+          />
+          <FormField
+            name="birthdate"
+            component={props => <Datepicker {...props} />}
+            label="Birth date"
+            isRequired
+          />
         </div>
 
         <div className="col-sm-6 col-xs-12">
-          <div className={cn('field-row')}>
-            <label>Username</label>
-            <Field
-              name="username"
-              component={Input}
-              type="text"
-              placeholder="Username"
-            />
-          </div>
-          <div className={cn('field-row')}>
-            <label>Password</label>
-            <Field
-              name="password"
-              component={PasswordInput}
-              type="password"
-              placeholder="Password"
-            />
-          </div>
-          <div className={cn('field-row')}>
-            <label>Repeat Password</label>
-            <Field
-              name="passwordRepeat"
-              component={PasswordInput}
-              type="password"
-              placeholder="Password"
-            />
-          </div>
+          <FormField
+            name="email"
+            component={TextInput}
+            type="email"
+            placeholder="Email"
+            label="Email"
+            isRequired
+          />
+          <FormField
+            name="address"
+            component={TextInput}
+            type="text"
+            placeholder="Enter your address..."
+            label="Address"
+            isRequired
+          />
         </div>
       </div>
 
       <div className={cn('button-row')}>
         <Button type="button" onClick={reset}>
-          Reset
+          Back
         </Button>
-        <Button primary type="submit" disabled={pristine || submitting}>
-          {submitting ? (
-            <Spinner color="white" scale={0.6} />
-          ) : (
-            <span>Submit</span>
-          )}
+        <Button
+          primary
+          type="submit"
+          disabled={pristine || submitting}
+          loading={submitting}
+        >
+          <span>Next</span>
         </Button>
       </div>
     </form>

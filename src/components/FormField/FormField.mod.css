@@ -1,3 +1,12 @@
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field label {
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
 .has-error input {
   border: 1px solid red;
   background-color: rgba(255, 0, 0, 0.05);
@@ -8,4 +17,9 @@
   font-weight: 600;
   color: red;
   margin: 3px 0;
+}
+
+.red {
+  color: red;
+  margin-left: 5px;
 }

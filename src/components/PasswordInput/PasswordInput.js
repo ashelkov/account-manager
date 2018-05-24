@@ -15,33 +15,15 @@ class PasswordInput extends Component {
   };
 
   render() {
-    const {
-      input,
-      label,
-      meta: { touched, error },
-      className
-    } = this.props;
     const { showPassword } = this.state;
 
     return (
-      <div
-        className={cn('input-field', className, {
-          'has-error': touched && error
-        })}
-      >
-        <label>{label}</label>
-        <div className={cn('input-wrapper')}>
-          <input
-            {...input}
-            placeholder={label}
-            type={showPassword ? 'text' : 'password'}
-          />
-          <i
-            className={`far fa-${showPassword ? 'eye-slash' : 'eye'}`}
-            onClick={this.togglePassword}
-          />
-        </div>
-        {touched && error && <div className={cn('field-error')}>{error}</div>}
+      <div className={cn('password-input')}>
+        <input {...this.props} type={showPassword ? 'text' : 'password'} />
+        <i
+          className={`far fa-${showPassword ? 'eye-slash' : 'eye'}`}
+          onClick={this.togglePassword}
+        />
       </div>
     );
   }

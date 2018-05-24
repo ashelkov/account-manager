@@ -1,10 +1,10 @@
 import React from 'react';
 // components
-import { Field, reduxForm } from 'redux-form';
-import Input from '../Input/Input';
+import { reduxForm } from 'redux-form';
+import FormField from '../FormField/FormField';
+import TextInput from '../TextInput/TextInput';
 import PasswordInput from '../PasswordInput/PasswordInput';
 import Button from '../Button/Button';
-import Spinner from '../Spinner/Spinner';
 // styles
 import classnames from 'classnames/bind';
 import styles from './UserAccountForm.mod.css';
@@ -25,33 +25,30 @@ const UserAccountForm = ({ handleSubmit, pristine, reset, submitting }) => {
         </div>
 
         <div className="col-sm-6 col-xs-12">
-          <div className={cn('field-row')}>
-            <label>Username</label>
-            <Field
-              name="username"
-              component={Input}
-              type="text"
-              placeholder="Username"
-            />
-          </div>
-          <div className={cn('field-row')}>
-            <label>Password</label>
-            <Field
-              name="password"
-              component={PasswordInput}
-              type="password"
-              placeholder="Password"
-            />
-          </div>
-          <div className={cn('field-row')}>
-            <label>Repeat Password</label>
-            <Field
-              name="passwordRepeat"
-              component={PasswordInput}
-              type="password"
-              placeholder="Password"
-            />
-          </div>
+          <FormField
+            name="username"
+            component={TextInput}
+            type="text"
+            placeholder="Username"
+            label="Username"
+            isRequired
+          />
+          <FormField
+            name="password"
+            component={props => <PasswordInput {...props} />}
+            type="password"
+            placeholder="Password"
+            label="Password"
+            isRequired
+          />
+          <FormField
+            name="passwordRepeat"
+            component={props => <PasswordInput {...props} />}
+            type="password"
+            placeholder="Password"
+            label="Repeat Password"
+            isRequired
+          />
         </div>
       </div>
 
@@ -59,12 +56,13 @@ const UserAccountForm = ({ handleSubmit, pristine, reset, submitting }) => {
         <Button type="button" onClick={reset}>
           Reset
         </Button>
-        <Button primary type="submit" disabled={pristine || submitting}>
-          {submitting ? (
-            <Spinner color="white" scale={0.6} />
-          ) : (
-            <span>Submit</span>
-          )}
+        <Button
+          primary
+          type="submit"
+          disabled={pristine || submitting}
+          loading={submitting}
+        >
+          <span>Submit</span>
         </Button>
       </div>
     </form>

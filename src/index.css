@@ -71,3 +71,7 @@ button:hover {
 .thin {
   font-weight: 300;
 }
+
+.red {
+  color: red;
+}
